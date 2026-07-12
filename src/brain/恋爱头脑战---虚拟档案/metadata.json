@@ -1,0 +1,6 @@
+{
+  "name": "恋爱头脑战 - 虚拟档案",
+  "description": "A high-contrast visual novel UI inspired by Kaguya-sama",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,6 @@
+{
+  "name": "PopRent | 完美租借男友",
+  "description": "波普风格的后宫恋爱轻喜剧文字游戏前端框架",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

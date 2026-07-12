@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Montserrat:ital,wght@0,700;0,900;1,900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+
+  --color-pop-pink: #FF007F;
+  --color-pop-pink-dark: #cc0066;
+  --color-pop-cyan: #00F0FF;
+  --color-pop-yellow: #FFE600;
+  --color-pop-dark: #0A0A12;
+  --color-pop-panel: #141424;
+  --color-pop-panel-border: rgba(255, 0, 127, 0.3);
+}
+
+body {
+  background-color: var(--color-pop-dark);
+  color: white;
+  overflow: hidden;
+  user-select: none;
+  font-family: var(--font-sans);
+}
+
+/* Halftone pattern */
+.bg-halftone {
+  background-image: radial-gradient(var(--color-pop-pink) 10%, transparent 10%);
+  background-size: 8px 8px;
+  opacity: 0.08;
+}
+
+/* Diagonal stripes */
+.bg-stripes {
+  background: repeating-linear-gradient(
+    45deg,
+    var(--color-pop-panel),
+    var(--color-pop-panel) 10px,
+    var(--color-pop-dark) 10px,
+    var(--color-pop-dark) 20px
+  );
+}
+
+.bg-stripes-yellow {
+  background: repeating-linear-gradient(
+    45deg,
+    var(--color-pop-yellow),
+    var(--color-pop-yellow) 10px,
+    transparent 10px,
+    transparent 20px
+  );
+}
+
+.bg-stripes-pink {
+  background: repeating-linear-gradient(
+    45deg,
+    var(--color-pop-pink),
+    var(--color-pop-pink) 10px,
+    transparent 10px,
+    transparent 20px
+  );
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(10, 10, 18, 0.5);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-pop-pink);
+  border-radius: 2px;
+}
+
+/* Decorative corner clips */
+.clip-corner {
+  clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
+}
+.clip-corner-reverse {
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+}
+
+/* Glowing text */
+.text-glow-pink {
+  text-shadow: 0 0 10px rgba(255, 0, 127, 0.8), 0 0 20px rgba(255, 0, 127, 0.4);
+}
+.text-glow-cyan {
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.8), 0 0 20px rgba(0, 240, 255, 0.4);
+}
+
+/* Scanline effect */
+.scanlines::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0),
+    rgba(255,255,255,0) 50%,
+    rgba(0,0,0,0.2) 50%,
+    rgba(0,0,0,0.2)
+  );
+  background-size: 100% 4px;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.3;
+}
+
+.crt::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(18, 16, 16, 0.1);
+  opacity: 0;
+  z-index: 50;
+  pointer-events: none;
+  animation: flicker 0.15s infinite;
+}
+
+@keyframes flicker {
+  0% { opacity: 0.02; }
+  50% { opacity: 0.05; }
+  100% { opacity: 0.02; }
+}
+
+/* Custom Selection */
+::selection {
+  background: var(--color-pop-pink);
+  color: white;
+}

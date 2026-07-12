@@ -1,0 +1,6 @@
+{
+  "name": "Pop-Love: The LLM Romance Prototype",
+  "description": "A Pop-Art, P4G, and Kaguya-sama inspired frontend framework for an LLM-driven romantic comedy visual novel.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

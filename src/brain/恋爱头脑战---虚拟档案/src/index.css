@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Noto Sans SC", system-ui, sans-serif;
+  --font-serif: "Noto Serif SC", ui-serif, serif;
+  
+  --color-primary: #dc2626;
+  --color-primary-dark: #b91c1c;
+  --color-dark: #0a0a0a;
+  --color-darker: #050505;
+  --color-light: #f8f9fa;
+  --color-gold: #fbbf24;
+
+  --animate-shine: shine 1s ease-in-out;
+}
+
+@keyframes shine {
+  0% { transform: skewX(-12deg) translateX(-200%); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: skewX(-12deg) translateX(200%); opacity: 0; }
+}
+
+body {
+  @apply font-sans bg-darker text-light overflow-hidden antialiased;
+  background-color: #050505;
+}
+
+.kaguya-diagonal {
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+}
+
+.kaguya-diagonal-reverse {
+  clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
+}
+
+.halftone-bg {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+/* Custom Scrollbar for inner elements */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+}
+::-webkit-scrollbar-thumb {
+  background: #dc2626;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b91c1c;
+}
